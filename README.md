@@ -4,6 +4,8 @@ This is a visual media app project that allows users to search films and TV show
 entering their titles, or search them by genre. They can also search for people in TV
 and film, and explore their projects. 
 
+View the app: https://visual-media-app.netlify.app/ 
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
