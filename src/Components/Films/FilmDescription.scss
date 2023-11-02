@@ -1,0 +1,58 @@
+@use "../../scss/variables" as *;
+
+.title-overview {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.title-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  img {
+    flex-basis: 25%;
+  }
+}
+
+.title-data {
+  flex-basis: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 20px;
+  color: $grey;
+
+  div {
+    font-style: italic;
+    font-size: 25px;
+  }
+
+  div,
+  h1,
+  p,
+  h3 {
+    color: $beige;
+  }
+}
+
+.nav-links {
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+  a {
+    font-size: 25px;
+    flex-basis: content;
+    text-decoration: none;
+    color: $beige;
+
+    &:hover {
+      color: $grey;
+    }
+  }
+}

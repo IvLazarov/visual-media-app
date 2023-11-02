@@ -1,0 +1,59 @@
+@use "../../scss/variables" as *;
+
+.person-description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  h1,
+  h2 {
+    color: $beige;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.pagination-align {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: content;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+
+    a {
+      transition: transform 0.2s;
+      text-align: center;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  img {
+    width: 220px;
+  }
+}
+
+/* Media querries */
+
+@media (max-width: 900px) {
+  .person-description h2 {
+    text-align: center;
+  }
+}

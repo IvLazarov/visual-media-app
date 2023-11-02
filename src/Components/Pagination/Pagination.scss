@@ -1,0 +1,24 @@
+@use "../../scss/variables" as *;
+
+.pagination {
+  padding: 10px;
+  width: 400px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 5px;
+
+  .page-num {
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 400;
+
+    &:hover {
+      background-color: $grey;
+      color: $white;
+    }
+  }
+}
