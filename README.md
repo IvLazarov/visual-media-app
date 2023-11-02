@@ -1,7 +1,7 @@
 # Visual-Media App
 
 This is a visual media app project that allows users to search films and TV shows by 
-entering their titles, or search they by genres. They can also search for people in TV
+entering their titles, or search them by genre. They can also search for people in TV
 and film, and explore their projects. 
 
 # React + Vite
