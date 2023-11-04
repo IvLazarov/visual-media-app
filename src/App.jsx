@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Films from "./Components/Films/Films";
 import TVShows from "./Components/TV Shows/TVShows";
@@ -15,6 +15,7 @@ import ErrorPage from "./Components/Error/ErrorPage";
 function App() {
   return (
     <>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<Films />} />
@@ -32,8 +33,10 @@ function App() {
           path="/show_genre_suggestions/:id"
           element={<ShowGenreSuggestions />}
         />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/*" element={<ErrorPage />} />
+        
       </Routes>
+      </BrowserRouter>
     </>
   );
 }
