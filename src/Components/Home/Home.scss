@@ -6,10 +6,13 @@
   width: 100%;
   background-color: $dark-grey;
   color: $white;
+  font-family: 'Oswald', sans-serif;
 }
 
 .page-title {
   height: 50px;
+  margin-top: 1%;
+  margin-bottom: 2%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -17,7 +20,7 @@
   text-align: center;
 
   h1 {
-    color: $beige;
+    color: $white;
   }
 }
 
@@ -32,23 +35,22 @@
   text-align: center;
 
   a {
-    border: 1px solid $light-grey;
-    border-radius: 10px;
     flex-basis: content;
     height: 30px;
+    width: fit-content;
     padding-left: 2%;
     padding-right: 2%;
     text-decoration: none;
     color: $white;
-    background-color: $light-grey;
+    background-color: $dark-grey;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    box-shadow: inset 0 0 0 0 $dark-grey;
+    transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
 
     &:hover {
-      border: 1px solid $grey;
-      background-color: $grey;
-      color: $beige;
+      box-shadow: inset 254px 0 0 0 $black;
     }
   }
 }
@@ -59,9 +61,11 @@
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
 
   h2 {
-    color: $beige;
+    color: $red;
   }
 }
 
@@ -75,15 +79,18 @@
     width: 220px;
     text-align: center;
     transition: transform 0.2s;
+    padding: 2%;
 
     &:hover {
       transform: scale(1.1);
+      
     }
   }
 
   a {
     text-decoration: none;
     color: $white;
+
   }
 }
 

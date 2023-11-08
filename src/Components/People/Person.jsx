@@ -27,7 +27,6 @@ const Person = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setPersonCastCredits(data.cast);
         setPersonCrewCredits(data.crew);
       });

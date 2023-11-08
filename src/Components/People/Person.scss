@@ -7,7 +7,11 @@
 
   h1,
   h2 {
-    color: $beige;
+    color: $white;
+  }
+
+  h2{
+    padding-left: 2%;
   }
 
   h1 {
@@ -28,6 +32,7 @@
   justify-content: space-evenly;
 
   div {
+    margin: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-basis: content;

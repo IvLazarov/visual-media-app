@@ -37,11 +37,11 @@ const ShowDescription = () => {
               ? "No tagline available"
               : showData.tagline}
           </div>
-          <p>
+          <h3>
             {showData.overview === ""
               ? "No description available"
               : showData.overview}
-          </p>
+          </h3>
           <p>Number of episodes: {showData.number_of_episodes}</p>
           <p>Number of seasons: {showData.number_of_seasons}</p>
         </div>

@@ -7,30 +7,33 @@
 
   h2 {
     text-align: center;
-    color: $beige;
+    color: $white;
     height: 50px;
   }
 
   input {
-    border: 1px solid $beige;
+    border: 3px solid $white;
     width: 200px;
     height: 25px;
     border-radius: 10px;
-    color: $beige;
-    background-color: $light-brown;
+    color: $black;
+    background-color: $white;
     text-align: center;
     justify-self: center;
   }
 
   a {
+    font-size: 15px;
     text-decoration: none;
     text-align: center;
-    color: $beige;
+    color: $white;
+
+    &:hover {
+      color: $red;
+    }
   }
 
-  &:hover {
-    color: $light-grey;
-  }
+  
 }
 
 .search {
@@ -42,16 +45,17 @@
   align-items: center;
 
   button {
-    border: 1px solid $beige;
-    border-radius: 10px;
+    border: 3px solid $white;
     width: 100px;
-    height: 20px;
+    height: 30px;
     color: $white;
-    background-color: $beige;
+    background-color: $dark-grey;
+    box-shadow: inset 0 0 0 0 $dark-grey;
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
 
     &:hover {
-      border: 1px solid $light-grey;
-      background-color: $light-grey;
+      box-shadow: inset 100px 0 0 0 $black;
+      background-color: $dark-grey;
     }
   }
 }
@@ -59,6 +63,8 @@
 .item-description {
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 1%;
+  margin-top: 1%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

@@ -7,6 +7,7 @@
 }
 
 .title-info {
+  padding-top: 1%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -23,7 +24,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   row-gap: 20px;
-  color: $grey;
+  padding-top: 7%;
 
   div {
     font-style: italic;
@@ -34,12 +35,13 @@
   h1,
   p,
   h3 {
-    color: $beige;
+    color: $white;
   }
 }
 
 .nav-links {
   margin-top: 2%;
+  margin-bottom: 1%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -49,10 +51,12 @@
     font-size: 25px;
     flex-basis: content;
     text-decoration: none;
-    color: $beige;
+    color: $white;
+    box-shadow: inset 0 0 0 0 $black;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
     &:hover {
-      color: $grey;
+      box-shadow: inset 200px 0 0 0 $black;
     }
   }
 }

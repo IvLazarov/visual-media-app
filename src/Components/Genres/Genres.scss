@@ -29,6 +29,7 @@
 }
 
 .film {
+  margin: 1%;
   flex-basis: content;
   text-align: center;
   transition: transform 0.2s;
@@ -64,24 +65,25 @@
 }
 
 .item-desc {
-  border: 1px solid $beige;
-  background-color: $beige;
+  border: 3px solid $white;
+  background-color: $dark-grey;
   border-radius: 10px;
   text-align: center;
   width: 200px;
   font-size: 30px;
 
   &:hover {
-    background-color: $grey;
+    background-color: $black;
   }
 
   a {
     text-decoration: none;
-    background-color: $beige;
+    background-color: $dark-grey;
     text-align: center;
 
     &:hover {
-      background-color: $grey;
+      background-color: $black;
+      color: $red;
     }
   }
 }
