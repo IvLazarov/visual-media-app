@@ -60,7 +60,7 @@ const PaginationFilms = (props) => {
         pageLinkClassName="page-num"
         previousLinkClassName="page-num"
         nextLinkClassName="page-num"
-        activeClassName="active"
+        activeLinkClassName="active"
       />
     </>
   );

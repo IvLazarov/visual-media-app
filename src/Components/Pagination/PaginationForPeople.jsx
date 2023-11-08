@@ -8,7 +8,7 @@ const PaginationPeople = (props) => {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -60,7 +60,7 @@ const PaginationPeople = (props) => {
         pageLinkClassName="page-num"
         previousLinkClassName="page-num"
         nextLinkClassName="page-num"
-        activeClassName="active"
+        activeLinkClassName="active"
       />
     </>
   );
