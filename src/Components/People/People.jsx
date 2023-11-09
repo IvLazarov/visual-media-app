@@ -40,7 +40,9 @@ const PeopleSearch = () => {
         <button onClick={searchPeople}>Search</button>
       </div>
 
-      <Link to={"/"}>Home</Link>
+      <Link to={"/"}>
+        <h3>Home</h3>
+        </Link>
       <div className="people-container">
         {people.map((person) => {
           return (

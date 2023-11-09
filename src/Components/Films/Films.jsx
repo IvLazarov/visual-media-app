@@ -40,7 +40,9 @@ const Films = () => {
         <button onClick={searchFilms}>Search</button>
       </div>
 
-      <Link to={"/"}>Home</Link>
+      <Link to={"/"}>
+        <h3>Home</h3>
+        </Link>
 
       <PaginationFilms data={results} />
     </div>

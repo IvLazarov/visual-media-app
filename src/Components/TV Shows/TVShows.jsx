@@ -39,7 +39,9 @@ const TVShows = () => {
         <button onClick={searchTVShows}>Search</button>
       </div>
 
-      <Link to={"/"}>Home</Link>
+      <Link to={"/"}>
+        <h3>Home</h3>
+        </Link>
       <PaginationShows data={tvShows} />
     </div>
   );
