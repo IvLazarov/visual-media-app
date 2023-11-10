@@ -22,7 +22,7 @@ const PaginationShows = (props) => {
     setItemOffset(newOffset);
   };
 
-  console.log(data)
+
   return (
     <>
       <div className="item-description">
