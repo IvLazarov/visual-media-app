@@ -3,9 +3,11 @@
   padding: 0;
   width: 100%;
   height: 100%;
+  font-family: 'Oswald';
 }
 
 .error-page {
+    border: 1px solid red;
     background-color: #4c4e52;
     width: 100%;
     height:900px ;
