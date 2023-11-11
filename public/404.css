@@ -1,8 +1,13 @@
-
+*{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 .error-page {
     background-color: #4c4e52;
     width: 100%;
+    height: ;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
