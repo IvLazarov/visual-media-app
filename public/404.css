@@ -8,8 +8,8 @@
 .error-page {
     background-color: #4c4e52;
     color: whitesmoke;
-    width: 100%;
     height:650px ;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -28,7 +28,7 @@
 
 .error-page a {
     text-decoration: none;
-    width: fit-content;
+    height: 35px;
     font-size: 30px;
     box-shadow: inset 0 0 0 0 black;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
