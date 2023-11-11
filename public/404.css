@@ -1,6 +1,7 @@
 
 
 .error-page {
+    background-color: #4c4e52;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -8,7 +9,7 @@
     justify-content: center;
     align-items: center;
     color: whitesmoke;
-    background-color: #4c4e52;
+    
 }
 
 h2, a {
