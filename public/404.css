@@ -18,17 +18,16 @@
     
 }
 
-h2, a {
+.error-page h2, a {
     text-align: center;
     color: whitesmoke;
 }
 
-h2 {
+.error-page h2 {
     font-size: 50px;
-    color: whitesmoke;
 }
 
-a {
+.error-page a {
     text-decoration: none;
     width: fit-content;
     font-size: 30px;
@@ -39,6 +38,6 @@ a {
     
 }
 
-a:hover {
+.error-page a:hover {
     box-shadow: inset 100px 0 0 0 black;
 }
