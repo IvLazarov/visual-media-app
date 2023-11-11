@@ -20,6 +20,7 @@
 
 h2, a {
     text-align: center;
+    color: whitesmoke;
 }
 
 h2 {
@@ -29,7 +30,6 @@ h2 {
 
 a {
     text-decoration: none;
-    color: whitesmoke;
     width: fit-content;
     font-size: 30px;
     margin-top: 30px;
