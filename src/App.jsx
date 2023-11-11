@@ -33,7 +33,7 @@ function App() {
           path="/show_genre_suggestions/:id"
           element={<ShowGenreSuggestions />}
         />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/*" element={<ErrorPage />} />
         
       </Routes>
       </BrowserRouter>
