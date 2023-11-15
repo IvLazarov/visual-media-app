@@ -37,15 +37,18 @@
   h3 {
     color: $white;
   }
+
+  .nav-links {
+    width: fit-content;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
 }
 
-.nav-links {
-  margin-top: 2%;
-  margin-bottom: 1%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
 
   a {
     font-size: 25px;
@@ -59,4 +62,14 @@
       box-shadow: inset 200px 0 0 0 $black;
     }
   }
+
+ 
+}
+
+// Media Queries
+
+@media only screen and (max-width: 767px) {
+ .title-data{
+  flex-basis: 86%;
+ }
 }

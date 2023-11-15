@@ -44,13 +44,15 @@ const ShowDescription = () => {
           </h3>
           <p>Number of episodes: {showData.number_of_episodes}</p>
           <p>Number of seasons: {showData.number_of_seasons}</p>
-        </div>
-      </div>
 
-      <div className="nav-links">
+        <div className="nav-links">
         <Link to={"/tv_shows"}>Back to search</Link>
         <Link to={"/"}>Home</Link>
       </div>
+        </div>
+      </div>
+
+      
     </div>
   );
 };

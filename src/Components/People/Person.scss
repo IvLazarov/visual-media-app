@@ -11,7 +11,7 @@
   }
 
   h2{
-    padding-left: 2%;
+    padding-left: 108px;
   }
 
   h1 {
@@ -24,6 +24,7 @@
 }
 
 .pagination-align {
+  border: 1px solid red;
   padding-top: 15px;
   padding-bottom: 15px;
   display: flex;
@@ -52,6 +53,8 @@
 
   img {
     width: 220px;
+    border: 2px solid white;
+    border-radius: 7px;
   }
 }
 

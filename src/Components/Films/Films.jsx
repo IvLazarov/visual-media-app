@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PaginationFilms from "../Pagination/PaginationForFilms";
 import "./Films.scss";
+import { Oval } from  'react-loader-spinner';
 
 const Films = () => {
   const [query, setQuerry] = useState("");
@@ -43,8 +44,21 @@ const Films = () => {
       <Link to={"/"}>
         <h3>Home</h3>
         </Link>
+        {
+          results.length === null ? 
 
-      <PaginationFilms data={results} />
+        <Oval
+        visible="true"
+        ariaLabel="loading"
+        color="white"
+        secondaryColor="#4c4e52"
+        /> :<PaginationFilms data={results} />
+
+        
+        }
+        
+
+      
     </div>
   );
 };

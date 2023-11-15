@@ -39,13 +39,18 @@ const FilmDescription = () => {
           <p>{filmData.runtime} min</p>
           <div>{filmData.tagline}</div>
           <h3>{filmData.overview}</h3>
-        </div>
-      </div>
 
-      <div className="nav-links">
+          
+        <div className="nav-links">
         <Link to={"/films"}>Back to search</Link>
         <Link to={"/"}>Home</Link>
       </div>
+        </div>
+
+
+      </div>
+
+      
     </div>
   );
 };
