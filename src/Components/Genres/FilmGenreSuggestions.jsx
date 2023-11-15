@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Genres.scss";
+import {Oval} from 'react-loader-spinner';
 
 const FilmGenreSuggestions = () => {
   let genreId = useParams().id;
@@ -15,7 +16,6 @@ const FilmGenreSuggestions = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results);
         setMoviesByGenre(data.results);
       });
   }, [genreId]);
@@ -45,7 +45,17 @@ const FilmGenreSuggestions = () => {
       })}
 
       <div className="films-container">
-        {moviesByGenre.map((movieByGenre) => {
+        
+      
+
+
+        { moviesByGenre.length === null ?
+        <Oval
+        visible="true"
+        ariaLabel="loading"
+        color="white"
+        secondaryColor="#4c4e52" 
+        /> : moviesByGenre.map((movieByGenre) => {
           return (
             <div key={movieByGenre.id} className="film">
               <Link to={`/film_description/${movieByGenre.id}`}>
