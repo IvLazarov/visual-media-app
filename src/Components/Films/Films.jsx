@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PaginationFilms from "../Pagination/PaginationForFilms";
+import { Oval } from "react-loader-spinner";
 import "./Films.scss";
-import { Oval } from  'react-loader-spinner';
 
 const Films = () => {
   const [query, setQuerry] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleInput = (event) => {
     setQuerry(event.target.value);
@@ -14,6 +15,7 @@ const Films = () => {
 
   const handleKey = (event) => {
     if (event.key === "Enter") {
+      setLoading(true);
       searchFilms();
     }
   };
@@ -24,6 +26,7 @@ const Films = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        setLoading(true);
         setResults(data.results);
       });
   };
@@ -39,26 +42,25 @@ const Films = () => {
           value={query}
         />
         <button onClick={searchFilms}>Search</button>
+        <Link to={"/"}>
+          <h3>Home</h3>
+        </Link>
       </div>
 
-      <Link to={"/"}>
-        <h3>Home</h3>
-        </Link>
-        {
-          results.length === null ? 
-
-        <Oval
-        visible="true"
-        ariaLabel="loading"
-        color="white"
-        secondaryColor="#4c4e52"
-        /> :<PaginationFilms data={results} />
-
-        
-        }
-        
-
-      
+      {loading && results.length === 0 ? (
+        <div className="loader-2">
+          <Oval
+            visible="true"
+            ariaLabel="loading"
+            loading={loading}
+            color="white"
+            secondaryColor="#4c4e52"
+            strokeWidth="4"
+          />
+        </div>
+      ) : (
+        <PaginationFilms data={results} />
+      )}
     </div>
   );
 };

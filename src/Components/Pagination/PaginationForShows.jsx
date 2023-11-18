@@ -22,7 +22,6 @@ const PaginationShows = (props) => {
     setItemOffset(newOffset);
   };
 
-
   return (
     <>
       <div className="item-description">
@@ -33,7 +32,7 @@ const PaginationShows = (props) => {
                 {item.poster_path === null ? (
                   <img
                     src={
-                      "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/08/best-tv-shows-of-all-time.jpg"
+                      "https://images.unsplash.com/photo-1592854899481-f78db4baccb6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     }
                     alt={item.name}
                   />

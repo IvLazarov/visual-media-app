@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PaginationShows from "../Pagination/PaginationForShows";
+import { Oval } from "react-loader-spinner";
 
 const TVShows = () => {
   const [query, setQuery] = useState("");
   const [tvShows, setTvShows] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleInput = (event) => {
     setQuery(event.target.value);
@@ -12,6 +14,7 @@ const TVShows = () => {
 
   const handleKey = (event) => {
     if (event.key === "Enter") {
+      setLoading(true);
       searchTVShows();
     }
   };
@@ -22,6 +25,7 @@ const TVShows = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        setLoading(true);
         setTvShows(data.results);
       });
   };
@@ -37,12 +41,25 @@ const TVShows = () => {
           value={query}
         />
         <button onClick={searchTVShows}>Search</button>
+        <Link to={"/"}>
+          <h3>Home</h3>
+        </Link>
       </div>
 
-      <Link to={"/"}>
-        <h3>Home</h3>
-        </Link>
-      <PaginationShows data={tvShows} />
+      {loading && tvShows.length === 0 ? (
+        <div className="loader-2">
+          <Oval
+            visible="true"
+            ariaLabel="loading"
+            loading={loading}
+            color="white"
+            secondaryColor="#4c4e52"
+            strokeWidth="4"
+          />
+        </div>
+      ) : (
+        <PaginationShows data={tvShows} />
+      )}
     </div>
   );
 };

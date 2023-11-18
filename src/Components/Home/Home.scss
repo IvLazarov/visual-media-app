@@ -6,7 +6,7 @@
   width: 100%;
   background-color: $black;
   color: $white;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .page-title {
@@ -35,6 +35,8 @@
   text-align: center;
 
   a {
+    border: 3px solid $white;
+    border-radius: 7px;
     flex-basis: content;
     height: 30px;
     width: fit-content;
@@ -42,15 +44,15 @@
     padding-right: 2%;
     text-decoration: none;
     color: $white;
-    background-color: $dark-grey;
+    background-color: $black;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    box-shadow: inset 0 0 0 0 $dark-grey;
-    transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
+    box-shadow: inset 0 0 0 0 $red;
+    transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
 
     &:hover {
-      box-shadow: inset 254px 0 0 0 $black;
+      box-shadow: inset 254px 0 0 0 $red;
     }
   }
 }
@@ -83,14 +85,17 @@
 
     &:hover {
       transform: scale(1.1);
-      
+    }
+
+    img {
+      border: 3px solid $white;
+      border-radius: 7px;
     }
   }
 
   a {
     text-decoration: none;
     color: $white;
-
   }
 }
 

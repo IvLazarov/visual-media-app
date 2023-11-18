@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { Oval } from "react-loader-spinner";
 
 const ShowGenreSuggestions = () => {
   let genreId = useParams().id;
   const [genres, setGenres] = useState([]);
   const [showsByGenre, setShowsByGenre] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -13,6 +15,7 @@ const ShowGenreSuggestions = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        setLoading(true);
         setShowsByGenre(data.results);
       });
   }, [genreId]);
@@ -40,27 +43,39 @@ const ShowGenreSuggestions = () => {
           </div>
         );
       })}
-
-      <div className="films-container">
-        {showsByGenre.map((showByGenre) => {
-          return (
-            <div key={showByGenre.id} className="film">
-              <Link to={`/tv_show_description/${showByGenre.id}`}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w300/${showByGenre.poster_path}`}
-                  alt={showByGenre.title}
-                />
-                <h3>{showByGenre.name}</h3>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="nav-links">
+      <div className="navigation-links">
         <Link to={"/genres"}>Back to search</Link>
         <br />
         <Link to={"/"}>Home</Link>
+      </div>
+
+      <div className="films-container">
+        {showsByGenre.length === 0 ? (
+          <div className="loader">
+            <Oval
+              visible="true"
+              loading={loading}
+              ariaLabel="loading"
+              color="white"
+              secondaryColor="#4c4e52"
+              strokeWidth="4"
+            />
+          </div>
+        ) : (
+          showsByGenre.map((showByGenre) => {
+            return (
+              <div key={showByGenre.id} className="film">
+                <Link to={`/tv_show_description/${showByGenre.id}`}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300/${showByGenre.poster_path}`}
+                    alt={showByGenre.title}
+                  />
+                  <h3>{showByGenre.name}</h3>
+                </Link>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import './ErrorPage.scss';
+import "./ErrorPage.scss";
 
-function ErrorPage () {
+function ErrorPage() {
   return (
     <div className="error">
       <h2>404! Page not found!</h2>

@@ -32,7 +32,7 @@ const PaginationFilms = (props) => {
                 {item.poster_path === null ? (
                   <img
                     src={
-                      "https://fikti.umsu.ac.id/wp-content/uploads/2023/01/roll-film.jpg"
+                      "https://images.unsplash.com/photo-1592854899481-f78db4baccb6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     }
                     alt={item.title}
                   />

@@ -2,13 +2,14 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Oval } from "react-loader-spinner";
 import "./Genres.scss";
-import {Oval} from 'react-loader-spinner';
 
 const FilmGenreSuggestions = () => {
   let genreId = useParams().id;
   const [genres, setGenres] = useState([]);
   const [moviesByGenre, setMoviesByGenre] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -16,6 +17,7 @@ const FilmGenreSuggestions = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        setLoading(true);
         setMoviesByGenre(data.results);
       });
   }, [genreId]);
@@ -44,36 +46,39 @@ const FilmGenreSuggestions = () => {
         );
       })}
 
-      <div className="films-container">
-        
-      
-
-
-        { moviesByGenre.length === null ?
-        <Oval
-        visible="true"
-        ariaLabel="loading"
-        color="white"
-        secondaryColor="#4c4e52" 
-        /> : moviesByGenre.map((movieByGenre) => {
-          return (
-            <div key={movieByGenre.id} className="film">
-              <Link to={`/film_description/${movieByGenre.id}`}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w300/${movieByGenre.poster_path}`}
-                  alt={movieByGenre.title}
-                />
-                <h3>{movieByGenre.title}</h3>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="nav-links">
+      <div className="navigation-links">
         <Link to={"/genres"}>Back to search</Link>
         <br />
         <Link to={"/"}>Home</Link>
+      </div>
+
+      <div className="films-container">
+        {moviesByGenre.length === 0 ? (
+          <div className="loader">
+            <Oval
+              visible="true"
+              loading={loading}
+              ariaLabel="loading"
+              color="white"
+              secondaryColor="#4c4e52"
+              strokeWidth="4"
+            />
+          </div>
+        ) : (
+          moviesByGenre.map((movieByGenre) => {
+            return (
+              <div key={movieByGenre.id} className="film">
+                <Link to={`/film_description/${movieByGenre.id}`}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300/${movieByGenre.poster_path}`}
+                    alt={movieByGenre.title}
+                  />
+                  <h3>{movieByGenre.title}</h3>
+                </Link>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );
