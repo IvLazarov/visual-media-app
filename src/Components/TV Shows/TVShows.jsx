@@ -39,6 +39,7 @@ const TVShows = () => {
           onChange={handleInput}
           onKeyDownCapture={handleKey}
           value={query}
+          autoFocus
         />
         <button onClick={searchTVShows}>Search</button>
         <Link to={"/"}>

@@ -40,6 +40,7 @@ const Films = () => {
           onChange={handleInput}
           onKeyDownCapture={handleKey}
           value={query}
+          autoFocus
         />
         <button onClick={searchFilms}>Search</button>
         <Link to={"/"}>
