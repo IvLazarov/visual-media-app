@@ -17,6 +17,7 @@ const PeopleSearch = () => {
     if (event.key === "Enter") {
       setLoading(true);
       searchPeople();
+      setLoading(false);
     }
   };
 
