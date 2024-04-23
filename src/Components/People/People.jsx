@@ -53,7 +53,7 @@ const PeopleSearch = () => {
         </Link>
       </div>
       {searchTerm && people.length === 0 && !loading && (
-        <h2>Person not found!</h2>
+        <h4>Person not found!</h4>
       )}
       <div className="people-container">
         {loading && people.length === 0 ? (

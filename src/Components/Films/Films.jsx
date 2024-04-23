@@ -53,7 +53,7 @@ const Films = () => {
         </Link>
       </div>
       {searchTerm && results.length === 0 && !loading && (
-        <h2>Film not found!</h2>
+        <h4>Film not found!</h4>
       )}
       {loading && results.length === 0 ? (
         <div className="loader-2">

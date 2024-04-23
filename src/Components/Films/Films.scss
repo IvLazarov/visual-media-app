@@ -11,6 +11,16 @@
     height: 50px;
   }
 
+  h4 {
+    height: 300px;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   input {
     border: 3px solid $white;
     border-radius: 7px;
@@ -39,7 +49,6 @@
     justify-content: center;
     align-items: center;
   }
-
 }
 
 .search {
@@ -59,7 +68,7 @@
     color: $white;
     background-color: $dark-grey;
     box-shadow: inset 0 0 0 0 $dark-grey;
-    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+    transition: color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 
     &:hover {
       box-shadow: inset 100px 0 0 0 $red;
@@ -71,7 +80,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     box-shadow: inset 0 0 0 0 $red;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
     &:hover {
       box-shadow: inset 100px 0 0 0 $red;
@@ -90,7 +99,6 @@
   justify-content: space-evenly;
 
   div {
-
     border-radius: 7px;
     width: 220px;
     transition: transform 0.2s;
@@ -105,6 +113,4 @@
       border-radius: 7px;
     }
   }
-
-
 }

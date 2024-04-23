@@ -18,12 +18,10 @@ const TVShows = () => {
       setLoading(true);
       searchTVShows();
 
-      if(query.length > 0){
+      if (query.length > 0) {
         setSearchTerm(true);
       }
     }
-
-    
   };
 
   const searchTVShows = () => {
@@ -53,9 +51,9 @@ const TVShows = () => {
           <h3>Home</h3>
         </Link>
       </div>
-      {
-        searchTerm && tvShows.length === 0 && !loading && <h2>TV show not found!</h2>
-      }
+      {searchTerm && tvShows.length === 0 && !loading && (
+        <h4>TV show not found!</h4>
+      )}
       {loading && tvShows.length === 0 ? (
         <div className="loader-2">
           <Oval
