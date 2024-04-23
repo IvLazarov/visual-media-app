@@ -8,6 +8,7 @@ const Films = () => {
   const [query, setQuerry] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(false);
 
   const handleInput = (event) => {
     setQuerry(event.target.value);
@@ -17,6 +18,10 @@ const Films = () => {
     if (event.key === "Enter") {
       setLoading(true);
       searchFilms();
+
+      if (query.length > 0) {
+        setSearchTerm(true);
+      }
     }
   };
 
@@ -26,8 +31,8 @@ const Films = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setLoading(true);
         setResults(data.results);
+        setLoading(false);
       });
   };
   return (
@@ -47,7 +52,9 @@ const Films = () => {
           <h3>Home</h3>
         </Link>
       </div>
-
+      {searchTerm && results.length === 0 && !loading && (
+        <h2>Film not found!</h2>
+      )}
       {loading && results.length === 0 ? (
         <div className="loader-2">
           <Oval

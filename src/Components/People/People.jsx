@@ -8,6 +8,7 @@ const PeopleSearch = () => {
   const [query, setQuery] = useState("");
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(false);
 
   const handleInput = (event) => {
     setQuery(event.target.value);
@@ -17,6 +18,10 @@ const PeopleSearch = () => {
     if (event.key === "Enter") {
       setLoading(true);
       searchPeople();
+
+      if (query.length > 0) {
+        setSearchTerm(true);
+      }
     }
   };
 
@@ -26,8 +31,8 @@ const PeopleSearch = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setLoading(true);
         setPeople(data.results);
+        setLoading(false);
       });
   };
   return (
@@ -47,7 +52,9 @@ const PeopleSearch = () => {
           <h3>Home</h3>
         </Link>
       </div>
-
+      {searchTerm && people.length === 0 && !loading && (
+        <h2>Person not found!</h2>
+      )}
       <div className="people-container">
         {loading && people.length === 0 ? (
           <div className="loader">

@@ -7,6 +7,7 @@ const TVShows = () => {
   const [query, setQuery] = useState("");
   const [tvShows, setTvShows] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(false);
 
   const handleInput = (event) => {
     setQuery(event.target.value);
@@ -16,7 +17,13 @@ const TVShows = () => {
     if (event.key === "Enter") {
       setLoading(true);
       searchTVShows();
+
+      if(query.length > 0){
+        setSearchTerm(true);
+      }
     }
+
+    
   };
 
   const searchTVShows = () => {
@@ -25,8 +32,8 @@ const TVShows = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setLoading(true);
         setTvShows(data.results);
+        setLoading(false);
       });
   };
 
@@ -46,7 +53,9 @@ const TVShows = () => {
           <h3>Home</h3>
         </Link>
       </div>
-
+      {
+        searchTerm && tvShows.length === 0 && !loading && <h2>TV show not found!</h2>
+      }
       {loading && tvShows.length === 0 ? (
         <div className="loader-2">
           <Oval
